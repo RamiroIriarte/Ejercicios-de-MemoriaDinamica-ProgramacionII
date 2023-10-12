@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class Ejercicio
@@ -137,25 +138,123 @@ class Ejercicio
         //}   
         #endregion
         #region video-077
-        SortedList<string,string> glosario = new SortedList<string,string>();
-        glosario.Add("hola", "hello");
-        glosario.Add("bienvenido", "welcome");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
-        //glosario.Add("", "");
+        //SortedList<string, string> diccionario = new SortedList<string, string>();
+        //diccionario.Add("hola", "hello");
+        //diccionario.Add("bienvenido", "welcome");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        //Console.WriteLine("El diccionario puede traducir las siguientes palabras:");
 
-        string palabra = Console.ReadLine();
-        Console.WriteLine(glosario[palabra]);
+        //foreach (var i in diccionario)
+        //{
+        //    Console.WriteLine(i.Key);
+        //    Console.WriteLine("");
+        //}
+
+        //Console.ReadLine();
+        //Console.Clear();
+        //Console.WriteLine("Escriba la palabra que desea traducir");
+        //Console.WriteLine("Y si ya no quiere seguir traduciendo, apriete 'enter' sin escribir nada");
+        //Console.WriteLine("");
+
+        //while (true)
+        //{
+        //    string palabra = Console.ReadLine();
+        //    if (palabra == "")
+        //    {
+        //        break;
+        //    }
+        //    else
+        //    {
+        //       Console.WriteLine(diccionario[palabra]);
+        //    }
+        //}
+
         #endregion
+        #region video-078
+        //Dictionary<string, string> diccionario = new Dictionary<string, string>();
+        //diccionario.Add("hola", "hello");
+        //diccionario.Add("bienvenido", "welcome");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        ////diccionario.Add("", "");
+        //Console.WriteLine("El diccionario puede traducir las siguientes palabras:");
 
+        //foreach (var i in diccionario)
+        //{
+        //    Console.WriteLine(i.Key);
+        //    Console.WriteLine("");
+        //}
+
+        //Console.ReadLine();
+        //Console.Clear();
+        //Console.WriteLine("Escriba la palabra que desea traducir");
+        //Console.WriteLine("Y si ya no quiere seguir traduciendo, apriete 'enter' sin escribir nada");
+        //Console.WriteLine("");
+
+        //while (true)
+        //{
+        //    string palabra = Console.ReadLine();
+        //    if (palabra == "")
+        //    {
+        //        break;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(diccionario[palabra]);
+        //    }
+        //}
+
+        #endregion
+        #region video-079
+        SortedSet<string> listado = new SortedSet <string>();
+        Console.WriteLine("Escriba lo que desee guardar en el listado");
+        Console.WriteLine("Si ya no quiere agregar cosas, escriba 'terminar'");
+        while (true)
+        {
+           string cosa = Console.ReadLine();
+
+            //se verifica de que lo que esta cargando el usuario no este ya cargado
+            for (int i = 0; i < listado.Count; i++)
+            {
+                if (listado.Contains(cosa))
+                {
+                    Console.WriteLine("Lo que quiere ingresar ya se encuentra en la lista");
+                    i = 0;
+                    cosa = Console.ReadLine();
+                }
+
+            }
+
+            //Se agrega el contenido al sortedset o se finaliza la carga de texto
+            if (cosa != "terminar") 
+            {
+                listado.Add(cosa);
+            }
+            else
+            {
+                break;
+            }
+
+        }
+        #endregion
     }
 
 
